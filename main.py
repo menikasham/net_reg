@@ -30,7 +30,7 @@ for item in contacts_list:
     fio = split_fio(item[:3])
     fio.extend(item[3:])
     fio[-2] = re.sub(" |[()]|-", "", fio[-2])
-    fio[-2] = re.sub(r"^8", "+7", fio[-2])
+    fio[-2] = re.sub(r"^8|^7", "+7", fio[-2])
     fio[-2] = re.sub(r'(\+7)(\d{3})(\d{3})(\d{2})(\d{2})(доб\.\d{4})', r'\1(\2)\3-\4-\5 \6', fio[-2])
     fio[-2] = re.sub(r'(\+7)(\d{3})(\d{3})(\d{2})(\d{2})', r'\1(\2)\3-\4-\5', fio[-2])
 
